@@ -10,7 +10,7 @@ function loadCSV() {
         dynamicTyping: true,
         complete: function (results) {
           employeeData = results.data;
-          console.log('CSV data loaded:', employeeData);
+          console.log('CSV data loaded:', employeeData); // Log the loaded data
         },
         error: function (error) {
           console.error('Error parsing CSV:', error);
@@ -38,6 +38,7 @@ function validateEnrollment() {
 
   // Split input by commas, spaces, or new lines
   const portalIDs = portalIDsInput.split(/[\s,]+/).filter(id => id.trim() !== '');
+  console.log('Input Portal IDs:', portalIDs); // Log the input Portal IDs
 
   if (portalIDs.length === 0) {
     resultElement.textContent = 'No valid Portal IDs found.';
@@ -51,6 +52,7 @@ function validateEnrollment() {
 
   // Find matching employees
   const matchedEmployees = employeeData.filter(emp => portalIDs.includes(emp['Portal ID'].toString()));
+  console.log('Matched Employees:', matchedEmployees); // Log the matched employees
 
   if (matchedEmployees.length > 0) {
     resultElement.textContent = `Found ${matchedEmployees.length} matching records.`;
