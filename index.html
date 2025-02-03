@@ -10,14 +10,11 @@
 <body>
   <div class="container">
     <h1>Enrollment Validator</h1>
-    <label for="csvFile">Upload CSV File:</label>
-    <input type="file" id="csvFile" accept=".csv">
-    <br><br>
-    <label for="employeeID">Enter Employee ID:</label>
-    <input type="text" id="employeeID" placeholder="e.g., 12345">
-    <button onclick="checkEmployee()">Validate Enrollment</button>
+    <p>Enter multiple Portal IDs (separated by commas, spaces, or new lines):</p>
+    <textarea id="portalIDs" placeholder="e.g., 12345, 67890, 54321"></textarea>
+    <button onclick="validateEnrollment()">Validate Enrollment</button>
     <p id="result"></p>
-    <table id="resultsTable" style="display: none;">
+    <table id="resultsTable">
       <thead>
         <tr>
           <th>Portal ID</th>
