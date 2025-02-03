@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrollment Validator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Enrollment Validator</h1>
+    <label for="csvFile">Upload CSV File:</label>
+    <input type="file" id="csvFile" accept=".csv">
+    <br><br>
+    <label for="employeeID">Enter Employee ID:</label>
+    <input type="text" id="employeeID" placeholder="e.g., 12345">
+    <button onclick="checkEmployee()">Validate Enrollment</button>
+    <p id="result"></p>
+    <table id="resultsTable" style="display: none;">
+      <thead>
+        <tr>
+          <th>Portal ID</th>
+          <th>Edited Name</th>
+          <th>Location</th>
+          <th>Region</th>
+          <th>CE Completion</th>
+          <th>CEB Completion</th>
+          <th>PWM Completion</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
